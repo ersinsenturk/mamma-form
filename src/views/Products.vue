@@ -2,7 +2,7 @@
   <div class="products">
     <div class="product">
       <a :href="link">
-        <img src="../assets/logo.png" alt="">
+        <img src="../assets/balik.png" alt="">
         ürün adı
         <div class="cta">incele</div>
       </a>
