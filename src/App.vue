@@ -5,15 +5,18 @@
 </template>
 
 <style lang="scss">
-body{
+html,body{
   background-color: #F4F3E7;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 #app {
   font-family: 'Source Serif Pro', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #212121;
+  width: 100%;
 }
 
 h1{
@@ -33,6 +36,9 @@ h4{
     line-height: 20px;
   }
 }
+img{
+  max-width: 100%;
+}
 
 .btn{
   display: inline-block;
@@ -43,6 +49,10 @@ h4{
   padding: 20px 70px 16px 70px;
   border-radius: 40px;
   text-decoration: none;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 }
 
 </style>
