@@ -21,15 +21,15 @@ export default {
 .home{
   text-align: center;
 }
-  img{
+.home img{
     margin-bottom: 20px;
   }
-  h1{
+.home h1{
     margin-bottom: 20px;
     margin-top: 0;
     color: #19463C;
   }
-  h4{
+.home h4{
     margin-top: 0;
     margin-bottom: 60px;
   }
