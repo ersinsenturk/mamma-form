@@ -112,7 +112,7 @@
             </div>
             <h4>Vücut formunu seçiniz *</h4>
             <div class="bodytype-container">    
-            <div v-for="(bodyType, index) in bodyTypes" :key="bodyType.value" @click="addClass(index)" :class="[{selected:index==current}, 'type']">
+            <div v-for="(bodyType, index) in bodyTypes" :key="index" @click="addClass(index)" :class="[{selected:index==current}, 'type']">
                 <img src="../assets/body-2.png" alt=""><br>
                 <label :for="bodyType.id" v-text="bodyType.text"></label>
                 <input type="radio" name="vucut" v-model="form.body" :id="bodyType.id" :value="bodyType.value">
@@ -126,7 +126,7 @@
 
         <div class="products" v-if="productPage">
             <h1>Beslenme planlayici</h1>
-            <p>Günlük kalori ihtiyaci {{result}}Kcal (Kalori bildisini lutfen not ediniz).</p>
+            <p style="margin-bottom: 15px">Günlük kalori ihtiyaci {{result}}Kcal (Kalori bildisini lutfen not ediniz).</p>
             <div class="product">
                 <a href="">
                     <div class="product-image">
@@ -135,7 +135,7 @@
                     <div class="product-content">
                         <div class="product-title">
                             <span class="product-name">Tavuklu</span>
-                            <span class="product-daily">300gr / Gün 30TL</span>
+                            <span class="product-daily">{{kcalCalculate(1200)}}gr / Gün {{dailyPrice}} TL</span>
                         </div>
                         <div class="product-desc">
                             Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
@@ -148,12 +148,30 @@
             <div class="product">
                 <a href="">
                     <div class="product-image">
-                        <img src="../assets/balik.png" alt="">
+                        <img src="../assets/tavuk.png" alt="">
                     </div>
                     <div class="product-content">
                         <div class="product-title">
-                            <span class="product-name">Tavuklu</span>
-                            <span class="product-daily">300gr / Gün 30TL</span>
+                            <span class="product-name">Balıklı</span>
+                            <span class="product-daily">{{kcalCalculate(900)}}gr / Gün {{dailyPrice}} TL</span>
+                        </div>
+                        <div class="product-desc">
+                            Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                        </div>
+                        <div class="product-cta">incele</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="">
+                    <div class="product-image">
+                        <img src="../assets/et.png" alt="">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">
+                            <span class="product-name">Etli</span>
+                            <span class="product-daily">{{kcalCalculate(1500)}}gr / Gün {{dailyPrice}} TL</span>
                         </div>
                         <div class="product-desc">
                             Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
@@ -195,7 +213,7 @@ export default {
                 {text: "Zayıf", value: 0, id: "zayif"},
                 {text: "İdeal", value: 1, id: "ideal"},
                 {text: "Şişman", value: 2, id: "sisman"},
-                {text: "Obez", value: 3, id: "obez"}
+                {text: "Obez", value: 2, id: "obez"}
             ],
             infertileErr: false,
             ageErr: false,
@@ -256,13 +274,13 @@ export default {
     [[[1741,	1741,	1963], [1593,	1593,	1852],	[1296,	1296,	1482]], [[1630,	1630,	1852],	[1408,	1408,	1667],	[1259,	1259,	1389]]],
     [[[1767,	1767,	1993], [1617,	1617,	1880],	[1316,	1316,	1504]], [[1655,	1655,	1880],	[1429,	1429,	1692],	[1279,	1279,	1410]]]
             ],
-            calResult: ''
+            dailyPrice: ''
         }
     },
     computed:{
         result: function(){
             
-            console.log(this.calArr[Number(this.form.weight)][Number(this.form.infertile)][Number(this.form.body)][Number(this.form.activity)] )
+            //console.log(this.calArr[Number(this.form.weight)][Number(this.form.infertile)][Number(this.form.body)][Number(this.form.activity)] )
             
             return this.calArr[Number(this.form.weight)][Number(this.form.infertile)][Number(this.form.body)][Number(this.form.activity)]
             //return Number(this.form.infertile) + Number(this.form.age) + Number(this.form.weight) + Number(this.form.activity) + Number(this.form.snack) + Number(this.form.body) 
@@ -298,7 +316,14 @@ export default {
         this.bodyErr = this.form.body == '' ? true : false
         return false
         },
-        
+        kcalCalculate(cal){
+            let gr = this.result*1000/cal
+            this.priceCalculate(gr)
+            return gr.toFixed()
+        },
+        priceCalculate(gr){
+            this.dailyPrice = (109/(1000/gr)).toFixed(2)
+        }
         
     }
 }
@@ -319,6 +344,7 @@ export default {
 .calculator h1 {
     font-size: 72px;
     line-height: 82px;
+    font-weight: 400;
     margin-top: 0;
 }
 
@@ -332,6 +358,7 @@ export default {
 .calculator h4 {
     font-size: 20px;
     line-height: 28px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 768px) {
