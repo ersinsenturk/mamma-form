@@ -2,39 +2,41 @@
     <div class="calculator">
         <div class="home" v-if="homePage">
             <img src="../assets/pablo.png" alt="">
-            <h1>Bize biraz köpeğinizden<br> bahsedin.</h1>
-            <h4>Köpeğinizle ilgili birkaç soruya cevap verin, onun için hangi lezzetli ve besleyici<br>
-            Mamma’dan, ne ölçüde yemesi gerektiği ile ilgili besin planını çıkaralım.</h4>
+            <div class="text-1">Bize biraz köpeğinizden<br> bahsedin.</div>
+            <div class="text-2">Köpeğinizle ilgili birkaç soruya cevap verin, onun için hangi lezzetli ve besleyici<br>
+            Mamma’dan, ne ölçüde yemesi gerektiği ile ilgili besin planını çıkaralım.</div>
             <div class="form-btn" @click="showForm">Başla</div>
         </div>
 
         <div class="form" v-if="formPage">
-            <h1>Beslenme planlayici</h1>
+            <div class="text-1">Beslenme planlayici</div>
 
             <div class="inputs-container">
             <div class="input-container"> 
-                <input type="text" placeholder="Dostunuzun adı nedir?" v-model="form.name">
+                <input type="text" placeholder="Dostunuzun adı nedir?" v-model="form.name" :style="[form.name != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
             </div>
             
-            <div class="input-container">
-                <select v-model="form.infertile">
+            <div class="input-container select-container">
+                <select v-model="form.infertile" :style="[form.infertile != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
                     <option value="" disabled selected>Kısırlaştırıldı mı? *</option>
                     <option value="0">Hayır</option>
                     <option value="1">Evet</option>
                 </select>
-                <div class="error" v-if="infertileErr">Lütfen kısırlaştırma bilgisini secin</div>
+                <i class="gg-chevron-down"></i>
+                <div class="error" v-if="infertileErr && form.infertile == ''">Lütfen kısırlaştırma bilgisini secin</div>
             </div>
-            <div class="input-container">
-                <select v-model="form.age">
+            <div class="input-container select-container">
+                <select v-model="form.age" :style="[form.age != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
                     <option value="" disabled selected>Kac yaşında? *</option>
                     <option value="0">0 - 6 Ay</option>
                     <option value="1">6 - 12 Ay</option>
                     <option value="2">12+</option>
                 </select>
-                <div class="error" v-if="ageErr">Lütfen yaş bilgisini secin</div>
+                <i class="gg-chevron-down"></i>
+                <div class="error" v-if="ageErr && form.age == ''">Lütfen yaş bilgisini secin</div>
             </div>
-            <div class="input-container">
-                <select v-model="form.weight">
+            <div class="input-container select-container">
+                <select v-model="form.weight" :style="[form.weight != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
                     <option value="" disabled selected>Kilosu nedir? *</option>
                     <option value="0">0.5 Kg</option>
                     <option value="1">1 Kg</option>
@@ -89,28 +91,31 @@
                     <option value="50">50 Kg</option>
 
                 </select>
-                <div class="error" v-if="weightErr">Lütfen kilo bilgisini secin</div>
+                <i class="gg-chevron-down"></i>
+                <div class="error" v-if="weightErr && form.weight == ''">Lütfen kilo bilgisini secin</div>
             </div>
-            <div class="input-container">
-                <select v-model="form.activity">
+            <div class="input-container select-container">
+                <select v-model="form.activity" :style="[form.activity != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
                     <option value="" disabled selected>Aktivite seviyesi nasil? *</option>
                     <option value="0">Düşük</option>
                     <option value="1">Normal</option>
                     <option value="2">Yüksek</option>
                 </select>
-                <div class="error" v-if="activityErr">Lütfen aktivite seviyesi secin</div>
+                <i class="gg-chevron-down"></i>
+                <div class="error" v-if="activityErr && form.activity == ''">Lütfen aktivite seviyesi secin</div>
             </div>
-            <div class="input-container">
-                <select v-model="form.snack">
+            <div class="input-container select-container">
+                <select v-model="form.snack" :style="[form.snack != '' ? {backgroundColor: '#DAE5D7', borderColor: '#19463C'} : '']">
                     <option value="" disabled selected>Atıştırma miktarı? *</option>
                     <option value="0">Az</option>
                     <option value="1">Orta</option>
                     <option value="2">Çok</option>
                 </select>
-                <div class="error" v-if="snackErr">Lütfen atıştırma miktarı secin</div>
+                <i class="gg-chevron-down"></i>
+                <div class="error" v-if="snackErr && form.snack == ''">Lütfen atıştırma miktarı secin</div>
             </div>
             </div>
-            <h4>Vücut formunu seçiniz *</h4>
+            <div class="text-2">Vücut formunu seçiniz *</div>
             <div class="bodytype-container">    
             <div v-for="(bodyType, index) in bodyTypes" :key="index" @click="addClass(index)" :class="[{selected:index==current}, 'type']">
                 <img src="../assets/body-2.png" alt=""><br>
@@ -125,8 +130,8 @@
         </div>
 
         <div class="products" v-if="productPage">
-            <h1>Beslenme planlayici</h1>
-            <p style="margin-bottom: 15px">Günlük kalori ihtiyaci {{result}}Kcal (Kalori bildisini lutfen not ediniz).</p>
+            <div class="text-1">Beslenme planlayici</div>
+            <div class="text-3"><span style="color: #257865">{{form.name}}, günlük kalori ihtiyaci <b>{{result}}Kcal</b></span> (Kalori bildisini lutfen not ediniz).</div>
             <div class="product">
                 <a href="">
                     <div class="product-image">
@@ -135,12 +140,14 @@
                     <div class="product-content">
                         <div class="product-title">
                             <span class="product-name">Tavuklu</span>
-                            <span class="product-daily">{{kcalCalculate(1200)}}gr / Gün {{dailyPrice}} TL</span>
+                            <span class="product-daily">Günlük {{kcalCalculate(1200)}}gr ({{dailyPrice}} TL)</span>
                         </div>
-                        <div class="product-desc">
-                            Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                        <div class="align-items">
+                            <div class="product-desc">
+                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                            </div>
+                            <div class="product-cta">Ürünü İncele</div>
                         </div>
-                        <div class="product-cta">incele</div>
                     </div>
                 </a>
             </div>
@@ -153,12 +160,14 @@
                     <div class="product-content">
                         <div class="product-title">
                             <span class="product-name">Balıklı</span>
-                            <span class="product-daily">{{kcalCalculate(900)}}gr / Gün {{dailyPrice}} TL</span>
+                            <span class="product-daily">Günlük {{kcalCalculate(900)}}gr ({{dailyPrice}} TL)</span>
                         </div>
-                        <div class="product-desc">
-                            Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                        <div class="align-items">
+                            <div class="product-desc">
+                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                            </div>
+                            <div class="product-cta">Ürünü İncele</div>
                         </div>
-                        <div class="product-cta">incele</div>
                     </div>
                 </a>
             </div>
@@ -171,18 +180,20 @@
                     <div class="product-content">
                         <div class="product-title">
                             <span class="product-name">Etli</span>
-                            <span class="product-daily">{{kcalCalculate(1500)}}gr / Gün {{dailyPrice}} TL</span>
+                            <span class="product-daily">Günlük {{kcalCalculate(1500)}}gr ({{dailyPrice}} TL)</span>
                         </div>
-                        <div class="product-desc">
-                            Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                        <div class="align-items">
+                            <div class="product-desc">
+                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                            </div>
+                            <div class="product-cta">Ürünü İncele</div>
                         </div>
-                        <div class="product-cta">incele</div>
                     </div>
                 </a>
             </div>
 
             <div style="text-align: left">
-                <div class="back-btn" @click="showForm"><img src="../assets/back.png" alt=""> Forma geri dön</div>
+                <div class="back-btn" @click="showForm"><img src="../assets/back.png" alt=""> <span>Forma geri dön</span></div>
             </div>
             
         </div>
@@ -299,6 +310,7 @@ export default {
         },
         addClass:function(index){
             this.current=index;
+            this.bodyErr = false
         },
         checkForm(){
         
@@ -338,10 +350,14 @@ export default {
     height: 100%;
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
-
-.calculator h1 {
+@media screen and (max-width: 768px) {
+    .calculator{
+        padding: 0 15px;
+    }
+}
+.calculator .text-1 {
     font-size: 72px;
     line-height: 82px;
     font-weight: 400;
@@ -349,20 +365,20 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-    .calculator h1 {
-        font-size: 32px;
-        line-height: 34px;
+    .calculator .text-1 {
+        font-size: 28px;
+        line-height: 32px;
     }
 }
 
-.calculator h4 {
+.calculator .text-2 {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 32px;
     font-weight: 400;
 }
 
 @media screen and (max-width: 768px) {
-    .calculator h4 {
+    .calculator .text-2 {
         font-size: 16px;
         line-height: 20px;
     }
@@ -400,15 +416,23 @@ export default {
     margin-bottom: 20px;
 }
 
-.calculator .home h1 {
+.calculator .home .text-1 {
     margin-bottom: 20px;
     margin-top: 0;
     color: #19463C;
 }
 
-.calculator .home h4 {
+.calculator .home .text-2 {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .calculator .home .text-2 br{
+        display: none;
+    }
 }
 
 .calculator .form {
@@ -416,7 +440,13 @@ export default {
     padding-bottom: 50px;
     text-align: center;
 }
-
+.calculator .form .text-1{
+    margin-bottom: 40px;
+}
+.calculator .form .text-2{
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
 .calculator .form .inputs-container {
     display: flex;
     flex-flow: row wrap;
@@ -430,18 +460,44 @@ export default {
 
 .calculator .form .input-container {
     display: inline-block;
-    width: 44%;
-    flex-basis: 44%;
-    margin: 15px 3%;
+    width: 46%;
+    flex-basis: 46%;
+    margin: 0 1% 15px 1%;
 
 
 }
-
+.calculator .form .input-container.select-container{
+    position: relative;
+}
+.calculator .form .gg-chevron-down {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    top: 20px;
+    right: 15px;
+}
+.calculator .form .gg-chevron-down::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    left: 4px;
+    top: 2px
+}
 @media screen and (max-width: 768px) {
     .calculator .form .input-container {
         flex-basis: 100%;
         margin: 0 0 10px 0;
-        padding: 0 15px;
+        padding: 0 10px;
     }
 }
 
@@ -464,6 +520,8 @@ export default {
     border-radius: 6px;
     padding: 0 20px;
     color: #212121;
+    background-color: #fff;
+    -webkit-appearance: none;
 }
 
 .calculator .form .bodytype-container {
@@ -472,7 +530,7 @@ export default {
     justify-content: center;
     width: 800px;
     max-width: 100%;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 40px auto;
 }
 
 .calculator .form .bodytype-container .type {
@@ -487,6 +545,10 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
+    .calculator .form .input-container input[type="text"],
+    .calculator .form .input-container select{
+        padding: 0 10px;
+    }
     .calculator .form .bodytype-container .type {
         flex-basis: 46%;
         margin-bottom: 10px;
@@ -522,7 +584,7 @@ export default {
 
 .calculator .form .required-text {
     font-size: 16px;
-    margin-top: 60px;
+    margin-top: 40px;
     color: #212121;
     text-align: center;
 }
@@ -532,12 +594,19 @@ export default {
     width: 1040px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 15px 50px 15px;
+    padding: 50px 15px;
     box-sizing: border-box;
     text-align: center;
 
 }
-
+.calculator .products .text-1{
+    margin-bottom: 20px;
+}
+.calculator .products .text-3{
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
 .calculator .products .product {
     margin-bottom: 20px;
 }
@@ -562,15 +631,22 @@ export default {
 }
 
 .calculator .products .product-image {
-    flex-basis: 300px;
+    flex-basis: 280px;
+}
+@media screen and (max-width: 768px) {
+    .calculator .products .product-image {
+        flex-basis: auto;
+    }
+
 }
 
 .calculator .products .product-image img {
     width: 100%;
+    display: block;
 }
 
 .calculator .products .product-content {
-    flex-basis: calc(100% - 300px);
+    flex-basis: calc(100% - 280px);
     padding: 25px 0;
     display: flex;
     flex-flow: column;
@@ -608,15 +684,28 @@ export default {
     }
 }
 
+.calculator .products .align-items{
+    display: flex;
+    flex-flow: row;
+}
+@media screen and (max-width: 768px) {
+    .calculator .products .align-items{
+        flex-flow: column;
+    }
+}
+
 .calculator .products .product-desc {
     font-size: 20px;
     margin-top: 20px;
-
+    padding-right: 20px;
+    padding-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
     .calculator .products .product-desc {
         font-size: 18px;
+        padding-right: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -628,6 +717,7 @@ export default {
     padding: 0 45px;
     border-radius: 40px;
     align-self: flex-end;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -645,5 +735,12 @@ export default {
     display: inline-block;
     cursor: pointer;
 }
-  
+.calculator .products .back-btn img{
+    margin-right: 10px;
+    display: inline-block;
+}
+.calculator .products .back-btn span{
+    display: inline-block;
+    vertical-align: top;
+}
 </style>
