@@ -131,23 +131,28 @@
 
         <div class="products" v-if="productPage">
             <div class="text-1">Beslenme planlayici</div>
-            <div class="text-3"><span style="color: #257865">{{form.name}}, günlük kalori ihtiyaci <b>{{result}}Kcal</b></span> (Kalori bildisini lutfen not ediniz).</div>
+            <div class="text-3">{{form.name}} icin günlük kalori ihtiyaci <span style="color: #257865">{{result}} Kcal.</span></div>
+            <div class="text-4">Önerdiğimiz günlük tüketim miktarlarını not etmeyi unutmayın.</div>
+            <div class="product-flex">
+            
+
             <div class="product">
                 <a href="">
                     <div class="product-image">
-                        <img src="../assets/balik.png" alt="">
+                        <img src="../assets/tavuk-2.png" alt="">
                     </div>
                     <div class="product-content">
                         <div class="product-title">
-                            <span class="product-name">Tavuklu</span>
-                            <span class="product-daily">Günlük {{kcalCalculate(1200)}}gr ({{dailyPrice}} TL)</span>
+                            <span class="product-name">Tavuk Etli</span>
+                            <p>Tuketim onerimiz</p>
+                            <span class="product-daily">{{kcalCalculate(900)}} gr/gün</span>
                         </div>
-                        <div class="align-items">
+                        
                             <div class="product-desc">
-                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                                Günlük <span style="color: #257865">{{dailyPrice}} TL</span>’den başlayan fiyatlarla
                             </div>
                             <div class="product-cta">Ürünü İncele</div>
-                        </div>
+                        
                     </div>
                 </a>
             </div>
@@ -155,19 +160,20 @@
             <div class="product">
                 <a href="">
                     <div class="product-image">
-                        <img src="../assets/tavuk.png" alt="">
+                        <img src="../assets/hindi-2.png" alt="">
                     </div>
                     <div class="product-content">
                         <div class="product-title">
-                            <span class="product-name">Balıklı</span>
-                            <span class="product-daily">Günlük {{kcalCalculate(900)}}gr ({{dailyPrice}} TL)</span>
+                            <span class="product-name">Hindi Etli</span>
+                            <p>Tuketim onerimiz</p>
+                            <span class="product-daily">{{kcalCalculate(1500)}} gr/gün</span>
                         </div>
-                        <div class="align-items">
+                        
                             <div class="product-desc">
-                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                                Günlük <span style="color: #257865">{{dailyPrice}} TL</span>’den başlayan fiyatlarla
                             </div>
                             <div class="product-cta">Ürünü İncele</div>
-                        </div>
+                        
                     </div>
                 </a>
             </div>
@@ -175,26 +181,79 @@
             <div class="product">
                 <a href="">
                     <div class="product-image">
-                        <img src="../assets/et.png" alt="">
+                        <img src="../assets/dana-2.png" alt="">
                     </div>
                     <div class="product-content">
                         <div class="product-title">
-                            <span class="product-name">Etli</span>
-                            <span class="product-daily">Günlük {{kcalCalculate(1500)}}gr ({{dailyPrice}} TL)</span>
+                            <span class="product-name">Dana Etli</span>
+                            <p>Tuketim onerimiz</p>
+                            <span class="product-daily">{{kcalCalculate(1500)}} gr/gün</span>
                         </div>
-                        <div class="align-items">
+                        
                             <div class="product-desc">
-                                Protein ve vitamin bakimindan dengeli, sindirim sistemi icin ideal yagsiz protein.
+                                Günlük <span style="color: #257865">{{dailyPrice}} TL</span>’den başlayan fiyatlarla
                             </div>
                             <div class="product-cta">Ürünü İncele</div>
-                        </div>
+                        
                     </div>
                 </a>
             </div>
 
-            <div style="text-align: left">
+            <div class="product">
+                <a href="">
+                    <div class="product-image">
+                        <img src="../assets/balik-2.png" alt="">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">
+                            <span class="product-name">Balık Etli</span>
+                            <p>Tuketim onerimiz</p>
+                            <span class="product-daily">{{kcalCalculate(1200)}} gr/gün</span>
+                        </div>
+                        
+                            <div class="product-desc">
+                                Günlük <span style="color: #257865">{{dailyPrice}} TL</span>’den başlayan fiyatlarla
+                            </div>
+                            <div class="product-cta">Ürünü İncele</div>
+                        
+                    </div>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="">
+                    <div class="product-image">
+                        <img src="../assets/hindidana-2.png" alt="">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">
+                            <span class="product-name">Hindi & Dana Etli</span>
+                            <p>Tuketim onerimiz</p>
+                            <span class="product-daily">{{kcalCalculate(1500)}} gr/gün</span>
+                        </div>
+                        
+                            <div class="product-desc">
+                                Günlük <span style="color: #257865">{{dailyPrice}} TL</span>’den başlayan fiyatlarla
+                            </div>
+                            <div class="product-cta">Ürünü İncele</div>
+                        
+                    </div>
+                </a>
+            </div>
+            <div class="product">
                 <div class="back-btn" @click="showForm"><img src="../assets/back.png" alt=""> <span>Forma geri dön</span></div>
             </div>
+            </div>
+            <div class="reward-section">
+                <div class="reward-image">
+                    <img src="../assets/odul.png" alt="">
+                </div>
+                <div class="reward-text">
+                    <div class="p1">Peki ya ödül mamaları?</div>
+                    <div class="p2">Eğer atıştırmalığı veya ödül mamasını çok veriyorsanız günlük Mamma miktarını buna göre azaltabilirsiniz.</div>
+                </div>
+            </div>
+            
             
         </div>
         
@@ -590,52 +649,97 @@ export default {
 }
 
 
-.calculator .products {
-    width: 1040px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 50px 15px;
-    box-sizing: border-box;
-    text-align: center;
 
+
+.calculator .products .align-items{
+    display: flex;
+    flex-flow: row;
+}
+@media screen and (max-width: 768px) {
+    .calculator .products .align-items{
+        flex-flow: column;
+    }
+}
+
+
+
+
+
+
+.calculator .products {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
 }
 .calculator .products .text-1{
     margin-bottom: 20px;
 }
 .calculator .products .text-3{
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 15px;
+}
+.calculator .products .text-4{
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 40px;
-}
-.calculator .products .product {
-    margin-bottom: 20px;
-}
-
-.calculator .products .product a {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    color: #212121;
-    background-color: #E5DCC7;
-    border-radius: 20px;
-    padding: 0 25px;
-    text-decoration: none;
-    text-align: left;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
+    .calculator .products .text-3{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .calculator .products .text-4{
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+.calculator .products .product-flex{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+}
+
+.calculator .product {
+    flex-basis: 33.3%;
+    
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+    .calculator .product {
+        flex-basis: 100%;
+        padding: 0;
+    }
+}
+.calculator .products .product a {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: #212121;
+    background-color: #FFFBF6;
+    border-radius: 40px;
+    text-decoration: none;
+    overflow: hidden;
+    border: 1px solid #bbbab5;
+} 
+
+@media screen and (max-width: 768px) {
     .calculator .products .product a {
-        flex-flow: column;
-        align-items: center;
+        border-radius: 20px;
     }
 }
 
 .calculator .products .product-image {
-    flex-basis: 280px;
+
 }
 @media screen and (max-width: 768px) {
     .calculator .products .product-image {
-        flex-basis: auto;
+        
     }
 
 }
@@ -644,32 +748,31 @@ export default {
     width: 100%;
     display: block;
 }
-
 .calculator .products .product-content {
-    flex-basis: calc(100% - 280px);
-    padding: 25px 0;
-    display: flex;
-    flex-flow: column;
+    
+    padding: 20px 40px 40px 40px;
 }
 
 @media screen and (max-width: 768px) {
     .calculator .products .product-content {
-        text-align: center;
+        
     }
 }
 
 .calculator .products .product-name {
-    font-size: 48px;
+    font-size: 38px;
+    line-height: 52px;
     display: inline-block;
-    margin-right: 20px;
 }
 
 @media screen and (max-width: 768px) {
     .calculator .products .product-name {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 36px;
         display: block;
     }
 }
+
 
 .calculator .products .product-daily {
     font-size: 28px;
@@ -683,22 +786,10 @@ export default {
         display: block;
     }
 }
-
-.calculator .products .align-items{
-    display: flex;
-    flex-flow: row;
-}
-@media screen and (max-width: 768px) {
-    .calculator .products .align-items{
-        flex-flow: column;
-    }
-}
-
 .calculator .products .product-desc {
     font-size: 20px;
-    margin-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -711,7 +802,7 @@ export default {
 
 .calculator .products .product-cta {
     background-color: #19463C;
-    color: #F4F3E9;
+    color: #ECFC72;
     font-size: 20px;
     line-height: 55px;
     padding: 0 45px;
@@ -722,18 +813,24 @@ export default {
 
 @media screen and (max-width: 768px) {
     .calculator .products .product-cta {
-        align-self: auto;
-        margin-top: 30px;
+        font-size: 16px;
     }
 }
+
 .calculator .products .back-btn {
     font-size: 20px;
     color: #1B3F37;
     text-decoration: none;
-    line-height: 32px;
-    margin-top: 20px;
-    display: inline-block;
+    line-height: 70px;
     cursor: pointer;
+    border: 1px solid #bbbab5;
+    border-radius: 40px;
+}
+@media screen and (max-width: 768px) {
+    .calculator .products .back-btn {
+        font-size: 16px;
+        line-height: 48px;
+    }
 }
 .calculator .products .back-btn img{
     margin-right: 10px;
@@ -743,4 +840,55 @@ export default {
     display: inline-block;
     vertical-align: top;
 }
+
+.calculator .reward-section{
+    background-color: #FBDED5;
+    border-radius: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    text-align: left;
+    margin-top: 60px;
+}
+.calculator .reward-section .reward-image{
+    flex-basis: 540px;
+}
+.calculator .reward-section .reward-text{
+    flex-basis: calc(100% - 540px);
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+.calculator .reward-section .reward-text .p1{
+    font-size: 42px;
+    margin-bottom: 10px;
+    line-height: 56px;
+}
+.calculator .reward-section .reward-text .p2{
+    font-size: 22px;
+    line-height: 34px;
+}
+@media screen and (max-width: 768px) {
+    .calculator .reward-section{
+        text-align: center;
+        padding-top: 30px;
+    }
+    .calculator .reward-section .reward-image{
+        flex-basis: 100%;
+        order: 2;
+    }   
+    .calculator .reward-section .reward-text{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        padding: 0 30px;
+    }
+    .calculator .reward-section .reward-text .p1{
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .calculator .reward-section .reward-text .p2{
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
 </style>
+
