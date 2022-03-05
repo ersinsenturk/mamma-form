@@ -680,11 +680,12 @@ export default {
     font-size: 32px;
     line-height: 42px;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 .calculator .products .text-4{
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 @media screen and (max-width: 768px) {
@@ -695,6 +696,7 @@ export default {
     .calculator .products .text-4{
         font-size: 16px;
         line-height: 20px;
+        margin-bottom: 50px;
     }
 }
 .calculator .products .product-flex{
@@ -762,6 +764,7 @@ export default {
 .calculator .products .product-name {
     font-size: 38px;
     line-height: 52px;
+    font-weight: 400;
     display: inline-block;
 }
 

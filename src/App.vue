@@ -1,15 +1,22 @@
 <template>
   <div id="app">
     <Single />
+    <!-- <TextOverImage />
+    <br><br>
+    <HowWorks /> -->
   </div>
 </template>
 
 
 <script>
 import Single from './views/Single.vue'
+// import TextOverImage from './views/TextOverImage.vue'
+// import HowWorks from './views/HowWorks.vue'
 export default {
   components: {
-    Single
+    Single,
+    // TextOverImage,
+    // HowWorks
   }
 }
 </script>
