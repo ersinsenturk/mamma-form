@@ -29,7 +29,8 @@
 .toi-section{
     padding: 100px 0;
     background: url(../assets/sec-bg.png) no-repeat top center;
-    background-size: auto 100%;
+    background-size: 100% auto;
+    font-family: 'Source Serif Pro', serif;
 }
 .toi-section .toi-box{
     background-color: #FEF8F2;
@@ -47,8 +48,9 @@
     text-align: center;
 }
 .toi-section .toi-box .toi-image-box .toi-image-text{
-    font-size: 52px;
-    line-height: 64px;
+    font-size: 48px;
+    line-height: 54px;
+    padding: 0 45px;
     color: #212121;
     margin-bottom: 30px;
 }
@@ -65,23 +67,25 @@
     box-sizing: border-box;
 }
 .toi-section .toi-box .toi-content .toi-title{
-    font-size: 42px;
-    line-height: 50px;
+    font-size: 36px;
+    line-height: 42px;
     color: #19463C;
     margin-bottom: 30px;
 }
 .toi-section .toi-box .toi-content .toi-text{
-    font-size: 24px;
-    line-height: 32px;
+    font-family: Acumin Pro,sans-serif;
+    font-size: 20px;
+    line-height: 28px;
     color: #212121;
 }
 .toi-section .toi-box .toi-content .toi-btn{
+    font-family: Acumin Pro,sans-serif;
     display: inline-block;
     background-color: #19463C;
     color: #ECFC72;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 60px;
-    padding: 0 35px;
+    padding: 0 45px;
     margin-top: 40px;
     border-radius: 40px;
     text-decoration: none;
@@ -100,7 +104,9 @@
         border-radius: 20px;
     }
     .toi-section .toi-box .toi-image-box .toi-image-text{
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 36px;
+        padding: 0 30px;
     }
     .toi-section .toi-box .toi-content{
         flex-basis: 100%;
