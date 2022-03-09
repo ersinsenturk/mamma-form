@@ -3,7 +3,8 @@
     <!-- <Single /> -->
      <!-- <TextOverImage /> -->
     <br><br>
-    <HowWorks />
+    <!-- <HowWorks /> -->
+    <ListWithImage />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 <script>
 // import Single from './views/Single.vue'
 // import TextOverImage from './views/TextOverImage.vue'
-import HowWorks from './views/HowWorks.vue'
+// import HowWorks from './views/HowWorks.vue'
+import ListWithImage from './views/ListWithImage.vue'
 export default {
   components: {
     // Single,
     // TextOverImage,
-    HowWorks
+    // HowWorks,
+    ListWithImage
   }
 }
 </script>
