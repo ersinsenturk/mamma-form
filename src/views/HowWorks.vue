@@ -53,10 +53,11 @@
     background-color: #FEF8F2;
     padding: 100px 0;
     text-align: center;
+    font-family: 'Source Serif Pro', serif;
 }
 .howitwork-section .howitwork-title{
-    font-size: 56px;
-    line-height: 68px;
+    font-size: 48px;
+    line-height: 60px;
     margin-bottom: 60px;
 }
 .howitwork-section .howitwork-flex{
@@ -78,7 +79,7 @@
     display: block;
 }
 .howitwork-section .howitwork-box .howitwork-box-title{
-    font-size: 32px;
+    font-size: 30px;
     line-height: 42px;
     margin-bottom: 20px;
 
@@ -86,14 +87,17 @@
 .howitwork-section .howitwork-box .howitwork-box-text{
     font-size: 20px;
     line-height: 28px;
+    font-family: Acumin Pro,sans-serif;
+    font-weight: 300;
 }
 .howitwork-section .howitwork-btn{
     display: inline-block;
     background-color: #19463C;
     color: #ECFC72;
-    font-size: 22px;
+    font-family: Acumin Pro,sans-serif;
+    font-size: 18px;
     line-height: 60px;
-    padding: 0 35px;
+    padding: 0 45px;
     margin-top: 60px;
     border-radius: 40px;
     text-decoration: none;
@@ -125,6 +129,8 @@
     }
     .howitwork-section .howitwork-btn{
         margin-top: 30px;
+        font-size: 16px;
+        line-height: 48px;
     }
 }
 </style>
