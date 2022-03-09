@@ -29,7 +29,6 @@
 
 .lwi-section{
     padding: 100px 0;
-    background: url(../assets/sec-bg.png) no-repeat top center;
     background-size: 100% auto;
     font-family: 'Source Serif Pro', serif;
 }
