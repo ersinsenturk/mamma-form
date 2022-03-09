@@ -34,14 +34,14 @@
 }
 .lwi-section .lwi-box{
     background-color: #F4F3E7;
-    padding: 40px;
+    padding: 0 40px 0 0;
     border-radius: 40px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
 .lwi-section .lwi-box .lwi-image{
-    flex-basis: 480px;
+    flex-basis: 50%;
     background-color: #F4F3E7;
     border-radius: 40px 0 0 40px;
     overflow: hidden;
@@ -52,7 +52,7 @@
     display: inline-block;
 }
 .lwi-section .lwi-box .lwi-content{
-    flex-basis: calc(100% - 480px);
+    flex-basis: 50%;
     padding-left: 80px;
     box-sizing: border-box;
 }
@@ -73,17 +73,16 @@
         padding: 30px 0;
     }
     .lwi-section .lwi-box{
-        padding: 25px;
+        padding: 0 0 25px 0;
         border-radius: 20px;
     }
     .lwi-section .lwi-box .lwi-image{
         flex-basis: 100%;
-        padding-top: 20px;
         border-radius: 20px 20px 0 0;
     }
     .lwi-section .lwi-box .lwi-content{
         flex-basis: 100%;
-        padding: 30px 0 0 0;
+        padding: 30px 30px 0 30px;
     }
     .lwi-section .lwi-box .lwi-content .lwi-list{
         font-size: 22px;
