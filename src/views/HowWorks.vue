@@ -50,7 +50,6 @@
 }
 
 .howitwork-section{
-    background-color: #FEF8F2;
     padding: 100px 0;
     text-align: center;
     font-family: 'Source Serif Pro', serif;

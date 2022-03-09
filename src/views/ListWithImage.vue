@@ -45,7 +45,6 @@
     background-color: #F4F3E7;
     border-radius: 40px 0 0 40px;
     overflow: hidden;
-    padding-top: 40px;
     text-align: center;
 }
 .lwi-section .lwi-box .lwi-image img{
