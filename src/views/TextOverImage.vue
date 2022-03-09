@@ -75,6 +75,7 @@
 .toi-section .toi-box .toi-content .toi-text{
     font-family: Acumin Pro,sans-serif;
     font-size: 20px;
+    font-weight: 300;
     line-height: 28px;
     color: #212121;
 }
